@@ -3,6 +3,8 @@ import "./App.scss";
 import "firebase/auth";
 import Login from "./components/Login";
 import Home from "./components/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
   const firebaseConfig = {
@@ -18,7 +20,16 @@ function App() {
     <div className={"main"}>
       <FirebaseAppProvider firebaseConfig={firebaseConfig}>
         <AuthCheck fallback={<Login />}>
-          <Home />
+          <Router>
+            <Header />
+            <Switch>
+              <Route path="/stats">stats</Route>
+              <Route path="/profile">Profile</Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </Router>
         </AuthCheck>
       </FirebaseAppProvider>
     </div>

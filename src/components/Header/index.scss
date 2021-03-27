@@ -1,0 +1,21 @@
+@import "../scss/colors";
+@import "../scss/fonts";
+
+.header {
+  display: flex;
+  background-color: $white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 64px;
+
+  .header_links {
+    display: flex;
+    flex-direction: row;
+
+    .header_link {
+      margin-left: 64px;
+      padding: 8px;
+    }
+  }
+}
