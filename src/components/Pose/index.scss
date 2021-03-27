@@ -1,0 +1,14 @@
+.pose {
+  display: flex;
+  flex-direction: row;
+  padding: 64px;
+
+  .pose_sample {
+    flex: 1;
+    width: 100%;
+  }
+  .pose_actual {
+    flex: 1;
+    padding: 24px;
+  }
+}

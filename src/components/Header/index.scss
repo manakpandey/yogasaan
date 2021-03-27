@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 48px 64px;
+  font-family: $rubik;
 
   .header_links {
     display: flex;
@@ -16,6 +17,16 @@
     .header_link {
       margin-left: 64px;
       padding: 8px;
+      flex-direction: row-reverse;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: $purple;
+
+      & > div {
+        padding: 8px;
+      }
     }
   }
 }
