@@ -1,14 +1,55 @@
+@import "../scss/fonts";
+@import "../scss/colors";
+
 .pose {
   display: flex;
   flex-direction: row;
   padding: 64px;
+  font-family: $rubik;
 
   .pose_sample {
     flex: 1;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .pose_title {
+      text-align: center;
+      font-weight: 500;
+      font-size: 36px;
+    }
+
+    .timer {
+      margin: 24px;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    .start_button {
+      background-color: $purple;
+      color: $white;
+      text-align: center;
+      padding: 8px 48px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 12px;
+
+      &.disabled {
+        cursor: wait;
+        background-color: $shadow;
+      }
+    }
   }
   .pose_actual {
     flex: 1;
-    padding: 24px;
+    padding: 12px;
+    margin: 12px;
+
+    & > canvas {
+      box-shadow: 0 0 40px 20px #d1d1d1;
+      border-radius: 12px;
+    }
   }
 }

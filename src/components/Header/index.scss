@@ -9,6 +9,11 @@
   justify-content: space-between;
   padding: 48px 64px;
   font-family: $rubik;
+  font-weight: 300;
+
+  .header_logo{
+    font-size: 22px;
+  }
 
   .header_links {
     display: flex;
@@ -23,6 +28,7 @@
       justify-content: center;
       font-weight: bold;
       color: $purple;
+      font-weight: 300;
 
       & > div {
         padding: 8px;
