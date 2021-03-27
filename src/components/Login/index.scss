@@ -1,0 +1,43 @@
+@import "../scss/colors";
+@import "../scss/fonts";
+
+.login_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+
+  .login_form {
+    max-width: 100%;
+    width: 500px;
+    min-height: 600px;
+    height: 80%;
+    box-shadow: 4px 4px 10px 3px $shadow;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    align-items: center;
+    justify-content: space-around;
+
+    .signin_with_google {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-family: $roboto;
+      font-weight: 400;
+      padding: 4px 12px;
+      box-shadow: 2px 2px 4px 0 $shadow;
+      border-radius: 8px;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        padding: 8px;
+        padding-right: 16px;
+      }
+    }
+  }
+}
