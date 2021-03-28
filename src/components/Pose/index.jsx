@@ -30,7 +30,7 @@ export default function Pose() {
         Make sure that you orient yourself the same way as in the photo
         (left/right side of the body facing the camera). <br />
         <br />
-        You will be scored on how close you follow the pose.
+        You will be scored on how accurately you mirror the pose.
       </p>
     ),
     confirmButtonText: "Continue",
