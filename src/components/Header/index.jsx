@@ -18,23 +18,24 @@ export default function Header() {
     const [hover, setHover] = useState(false);
 
     return (
-      <div
-        className={"header_link"}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
-        <Link to={to}>
+      <Link to={to} className={"header_link"}>
+        <div
+          className={"header_link_cover"}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+        >
           <icon.type color={isSelected(to) || hover ? "#6B38FB" : "#000"} />
-        </Link>
-        {isSelected(to) && <div>{name}</div>}
-      </div>
+
+          <div className={isSelected(to) ? "selected" : ""}>{name}</div>
+        </div>
+      </Link>
     );
   };
 
   return (
     <div className={"header"}>
       <Link to="/" className={"header_logo"}>
-        YogAsaan
+        Yogasaan
       </Link>
       <div className={"header_links"}>
         <IconLink icon={<IconHome />} to="/" name="Home" />

@@ -24,17 +24,24 @@
 
     .header_link {
       margin-left: 64px;
-      padding: 8px;
-      flex-direction: row-reverse;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: $purple;
-      font-weight: 300;
+      text-decoration: none;
 
-      & > div {
+      .header_link_cover {
         padding: 8px;
+        flex-direction: row-reverse;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #000;
+        font-weight: 300;
+        .selected {
+          color: $purple;
+        }
+
+        & > div {
+          padding: 8px;
+        }
       }
     }
   }

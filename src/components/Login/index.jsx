@@ -22,7 +22,7 @@ export default function Login() {
   return (
     <div className={"login_container"}>
       <div className={"login_form"}>
-        <div>LOGO</div>
+        <div>YogAsaan</div>
         <div
           tabIndex={0}
           className={"signin_with_google"}

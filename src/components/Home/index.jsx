@@ -1,6 +1,8 @@
 import { Suspense, useEffect } from "react";
 import { useHistory } from "react-router";
 import { useFirestore, useFirestoreCollectionData, useUser } from "reactfire";
+import swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import Card from "../Card";
 import "./index.scss";
 
@@ -14,6 +16,25 @@ export default function Home() {
       name: user.displayName,
     });
   }, []);
+
+  const Swal = withReactContent(swal);
+  if (!localStorage.getItem("main"))
+    Swal.fire({
+      title: "LOGO",
+      html: (
+        <p style={{ fontFamily: "Rubik, sans-serif", fontWeight: 300 }}>
+          Hey, {user.displayName}, <br />
+          <br />
+          Welcome to <b>Yogasaan</b>, Yoga made Asaan (easy :)) Practicing yoga
+          from home was never easier!
+        </p>
+      ),
+      didOpen: () => {
+        localStorage.setItem("main", true);
+      },
+      confirmButtonText: "Continue",
+      confirmButtonColor: "#6b38fb",
+    });
 
   const history = useHistory();
   const poses = useFirestoreCollectionData(poseRef);

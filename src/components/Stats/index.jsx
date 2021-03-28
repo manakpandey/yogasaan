@@ -8,6 +8,9 @@ export default function Stats() {
       <div className="section">
         <div className="heading">Analytics</div>
         <Chart />
+        <div className="description">
+          The chart compares your total score while attempting different poses.
+        </div>
       </div>
       <div className="section">
         <div className="heading">Leaderboard</div>

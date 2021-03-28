@@ -7,6 +7,8 @@ import { useLocation } from "react-router";
 import { checkJoints } from "../../utils/getAngles";
 import { getScore } from "../../utils/getScore";
 import Result from "../Result";
+import swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export default function Pose() {
   const query = new URLSearchParams(useLocation().search);
@@ -18,6 +20,22 @@ export default function Pose() {
   const [finish, setFinish] = useState(false);
   const [score, setScore] = useState(0);
   const [frames, setFrames] = useState(0);
+
+  const Swal = withReactContent(swal);
+  Swal.fire({
+    html: (
+      <p style={{ fontFamily: "Rubik, sans-serif", fontWeight: 300 }}>
+        Clicking on a pose card initialises the test. A 15 second timer has been
+        added for your convenience. Click the start button and ready your pose.
+        Make sure that you orient yourself the same way as in the photo
+        (left/right side of the body facing the camera). <br />
+        <br />
+        You will be scored on how close you follow the pose.
+      </p>
+    ),
+    confirmButtonText: "Continue",
+    confirmButtonColor: "#6b38fb",
+  });
 
   const handlePose = (p) => {
     if (p && start) {

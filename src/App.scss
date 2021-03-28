@@ -11,4 +11,12 @@
     background-color: #fafafa;
     min-height: 70%;
   }
+
+  .spotify {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
 }
