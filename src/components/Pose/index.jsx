@@ -38,7 +38,6 @@ export default function Pose() {
               storagePath={pose.data?.image_url}
               className={"pose_sample"}
               alt={"Sample Pose"}
-              suspense={true}
             />
             <div className={"timer_button"}>
               <div className={"timer"}>
