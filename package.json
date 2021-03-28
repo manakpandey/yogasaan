@@ -17,7 +17,6 @@
     "react-posenet": "^0.1.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-vis": "^1.11.7",
     "reactfire": "^3.0.0-rc.0",
     "sweetalert2": "^10.15.7",
     "sweetalert2-react-content": "^3.3.1",

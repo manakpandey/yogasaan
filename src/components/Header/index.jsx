@@ -35,7 +35,7 @@ export default function Header() {
   return (
     <div className={"header"}>
       <Link to="/" className={"header_logo"}>
-        Yogasaan
+        <img src={"/yogi.png"} alt="Yogasaan" style={{ width: "100%" }} />
       </Link>
       <div className={"header_links"}>
         <IconLink icon={<IconHome />} to="/" name="Home" />

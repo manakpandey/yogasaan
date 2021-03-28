@@ -20,7 +20,13 @@ export default function Home() {
   const Swal = withReactContent(swal);
   if (!localStorage.getItem("main"))
     Swal.fire({
-      title: "LOGO",
+      title: (
+        <img
+          src="/logo_small.png"
+          alt="Yogasaan"
+          style={{ width: 64, height: 64 }}
+        />
+      ),
       html: (
         <p style={{ fontFamily: "Rubik, sans-serif", fontWeight: 300 }}>
           Hey, {user.displayName}, <br />

@@ -22,7 +22,8 @@ export default function Login() {
   return (
     <div className={"login_container"}>
       <div className={"login_form"}>
-        <div>YogAsaan</div>
+        <img src={"/yog.png"} alt="yogasaan" style={{ width: "50%" }} />
+        <div style={{ fontSize: 24 }}>Fine tune your Yoga</div>
         <div
           tabIndex={0}
           className={"signin_with_google"}

@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Posenet from "react-posenet";
 import { StorageImage, useFirestore, useFirestoreDocDataOnce } from "reactfire";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
@@ -21,24 +21,26 @@ export default function Pose() {
   const [score, setScore] = useState(0);
   const [frames, setFrames] = useState(0);
 
-  const Swal = withReactContent(swal);
-  Swal.fire({
-    html: (
-      <p style={{ fontFamily: "Rubik, sans-serif", fontWeight: 300 }}>
-        Clicking on a pose card initialises the test. A 15 second timer has been
-        added for your convenience. Click the start button and ready your pose.
-        Make sure that you orient yourself the same way as in the photo
-        (left/right side of the body facing the camera). <br />
-        <br />
-        You will be scored on how accurately you mirror the pose.
-      </p>
-    ),
-    confirmButtonText: "Continue",
-    confirmButtonColor: "#6b38fb",
-  });
+  useEffect(() => {
+    const Swal = withReactContent(swal);
+    Swal.fire({
+      html: (
+        <p style={{ fontFamily: "Rubik, sans-serif", fontWeight: 300 }}>
+          Clicking on a pose card initialises the test. A 15 second timer has
+          been added for your convenience. Click the start button and ready your
+          pose. Make sure that you orient yourself the same way as in the photo
+          (left/right side of the body facing the camera). <br />
+          <br />
+          You will be scored on how accurately you mirror the pose.
+        </p>
+      ),
+      confirmButtonText: "Continue",
+      confirmButtonColor: "#6b38fb",
+    });
+  }, []);
 
   const handlePose = (p) => {
-    if (p && start) {
+    if (p && start && p.length > 0) {
       const ang = checkJoints(p[0]);
       const _score = getScore(pose.data?.angles, ang);
       setScore(score + _score);
