@@ -1,0 +1,41 @@
+@import "../scss/colors";
+@import "../scss/fonts";
+
+.card {
+  width: 200px;
+  height: 200px;
+  border-radius: 24px;
+  border: 2px solid $purpleLight;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px;
+  background-color: $white;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid $purple;
+  }
+
+  .bg {
+    width: 100%;
+  }
+  .card_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .card_title {
+      font-family: $rubik;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 24px;
+    }
+
+    .card_button {
+      padding: 8px;
+    }
+  }
+}
