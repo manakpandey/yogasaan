@@ -1,4 +1,4 @@
-function getScore(reqdAngle, obtdAngle) {
+export function getScore(reqdAngle, obtdAngle) {
     
     var deviation = Math.abs(obtdAngle - reqdAngle);
     var accuracy = 100 - ((100/180)*deviation);

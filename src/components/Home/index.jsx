@@ -16,6 +16,7 @@ export default function Home() {
         <div className={"card_container"}>
           {poses.data?.map((pose) => (
             <Card
+              key={pose.NO_ID_FIELD}
               title={pose.name}
               onClick={() => history.push(`pose?pid=${pose.NO_ID_FIELD}`)}
               path={pose.image_url}

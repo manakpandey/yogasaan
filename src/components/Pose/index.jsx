@@ -3,9 +3,11 @@ import Posenet from "react-posenet";
 import { StorageImage, useFirestore, useFirestoreDocData } from "reactfire";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import "./index.scss";
-import { Redirect, useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
+import { checkJoints } from "../../utils/getAngles";
 
 export default function Pose() {
+  const history = useHistory();
   const query = new URLSearchParams(useLocation().search);
   const poseID = query.get("pid");
 
@@ -13,11 +15,16 @@ export default function Pose() {
   const pose = useFirestoreDocData(poseRef);
 
   const [start, setStart] = useState(false);
-  const [finished, setFinish] = useState(false);
+
+  const handlePose = (p) => {
+    if (p && start) {
+      const ang = checkJoints(p[0]);
+      console.log(ang);
+    }
+  };
 
   return (
     <Suspense fallback={"Loading"}>
-      {finished && <Redirect to="/poseResult" />}
       <div className={"pose"}>
         <div className={"pose_sample"}>
           <div className={"pose_title"}>{pose.data?.name}</div>
@@ -28,7 +35,7 @@ export default function Pose() {
           />
           <div className={"timer"}>
             <CountdownCircleTimer
-              onComplete={() => setFinish(true)}
+              onComplete={() => history.push("poseResult")}
               isPlaying={start}
               duration={15}
               colors={[
@@ -51,7 +58,7 @@ export default function Pose() {
         </div>
 
         <div className={"pose_actual"}>
-          <Posenet />
+          <Posenet onEstimate={handlePose} />
         </div>
       </div>
     </Suspense>
