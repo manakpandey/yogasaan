@@ -1,6 +1,12 @@
 @import "../scss/fonts";
 
 .stats {
+  display: flex;
+  flex-direction: row;
+  .section {
+    flex: 1;
+    margin: 24px;
+  }
   .heading {
     font-family: $rubik;
     font-size: 36px;
