@@ -1,11 +1,20 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useHistory } from "react-router";
-import { useFirestore, useFirestoreCollectionData } from "reactfire";
+import { useFirestore, useFirestoreCollectionData, useUser } from "reactfire";
 import Card from "../Card";
 import "./index.scss";
 
 export default function Home() {
   const poseRef = useFirestore().collection("poses");
+  const userRef = useFirestore().collection("users");
+  const { data: user } = useUser();
+
+  useEffect(() => {
+    userRef.doc(user.uid).set({
+      name: user.displayName,
+    });
+  }, []);
+
   const history = useHistory();
   const poses = useFirestoreCollectionData(poseRef);
 

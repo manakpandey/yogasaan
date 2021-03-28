@@ -1,0 +1,27 @@
+@import "../scss/fonts";
+
+.leaderboard {
+  font-family: $rubik;
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    .rank {
+      & > span {
+        margin-right: 22px;
+      }
+    }
+  }
+}

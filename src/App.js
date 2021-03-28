@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Pose from "./components/Pose";
 import Profile from "./components/Profile";
+import Stats from "./components/Stats";
 
 function App() {
   const firebaseConfig = {
@@ -30,7 +31,9 @@ function App() {
                   <Pose poseID={"4XIRMFpmKmUiFNjWgUrr"} />
                 </Route>
 
-                <Route path="/stats">stats</Route>
+                <Route path="/stats">
+                  <Stats />
+                </Route>
                 <Route path="/profile">
                   <Profile />
                 </Route>
