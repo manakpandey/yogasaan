@@ -1,0 +1,52 @@
+@import "../scss/fonts";
+@import "../scss/colors";
+
+.result_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .result {
+    padding: 64px;
+
+    .user {
+      font-family: $rubik;
+      font-size: 24px;
+      color: $shadow;
+    }
+
+    .result_score {
+      font-family: $rubik;
+      font-size: 48px;
+      color: $purple;
+      text-align: center;
+    }
+  }
+  .continue_button {
+    background-color: $white;
+    border: 1px solid $purpleLight;
+    padding: 8px 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: $rubik;
+
+    &:hover {
+      background-color: $purple;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  .processing {
+    background-color: $shadow;
+    border: 1px solid $purpleLight;
+    color: $white;
+    padding: 8px 12px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: $rubik;
+  }
+}
