@@ -2,6 +2,8 @@
 @import "../scss/fonts";
 
 .card {
+  min-width: 200px;
+  min-height: 200px;
   width: 200px;
   height: 200px;
   border-radius: 24px;
@@ -26,6 +28,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 
     .card_title {
       font-family: $rubik;

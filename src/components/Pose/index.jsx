@@ -38,28 +38,31 @@ export default function Pose() {
               storagePath={pose.data?.image_url}
               className={"pose_sample"}
               alt={"Sample Pose"}
+              suspense={true}
             />
-            <div className={"timer"}>
-              <CountdownCircleTimer
-                onComplete={() => setFinish(true)}
-                isPlaying={start}
-                duration={15}
-                colors={[
-                  ["#afa5ff", 0.33],
-                  ["#F7B801", 0.33],
-                  ["#A30000", 0.33],
-                ]}
-              >
-                {({ remainingTime }) => remainingTime}
-              </CountdownCircleTimer>
-            </div>
+            <div className={"timer_button"}>
+              <div className={"timer"}>
+                <CountdownCircleTimer
+                  onComplete={() => setFinish(true)}
+                  isPlaying={start}
+                  duration={15}
+                  colors={[
+                    ["#afa5ff", 0.33],
+                    ["#F7B801", 0.33],
+                    ["#A30000", 0.33],
+                  ]}
+                >
+                  {({ remainingTime }) => remainingTime}
+                </CountdownCircleTimer>
+              </div>
 
-            <div
-              className={`start_button ${start ? "disabled" : ""}`}
-              tabIndex={start ? -1 : 0}
-              onClick={() => setStart(true)}
-            >
-              Start
+              <div
+                className={`start_button ${start ? "disabled" : ""}`}
+                tabIndex={start ? -1 : 0}
+                onClick={() => setStart(true)}
+              >
+                Start
+              </div>
             </div>
           </div>
 

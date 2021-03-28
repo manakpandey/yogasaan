@@ -4,7 +4,11 @@ import "./index.scss";
 export default function Card({ title, onClick, path }) {
   return (
     <div className={"card"} onClick={onClick}>
-      <StorageImage storagePath={path} alt={title} className={"bg"} />
+      <StorageImage
+        storagePath={path || "poses/Cat.jpg"}
+        alt={title}
+        className={"bg"}
+      />
       <div className={"card_content"}>
         <div className={"card_title"}>{title}</div>
         <div className={"card_button"}>

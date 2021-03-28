@@ -10,7 +10,7 @@ export default function Home() {
   const poses = useFirestoreCollectionData(poseRef);
 
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading</div>}>
       <div className={"home"}>
         <div className={"home_heading"}>Standalone Poses</div>
         <div className={"card_container"}>
