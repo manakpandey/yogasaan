@@ -45,6 +45,17 @@ function App() {
           </Router>
         </AuthCheck>
       </FirebaseAppProvider>
+      <div className={"spotify"}>
+        <iframe
+          title={"music"}
+          src="https://open.spotify.com/embed/track/2XEZOoJC9nu2o5k3DpDyC6"
+          width="300"
+          height="80"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></iframe>
+      </div>
     </div>
   );
 }
