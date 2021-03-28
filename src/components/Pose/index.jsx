@@ -3,9 +3,12 @@ import Posenet from "react-posenet";
 import { StorageImage, useFirestore, useFirestoreDocData } from "reactfire";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import "./index.scss";
-import { Redirect } from "react-router";
+import { Redirect, useLocation } from "react-router";
 
-export default function Pose({ poseID }) {
+export default function Pose() {
+  const query = new URLSearchParams(useLocation().search);
+  const poseID = query.get("pid");
+
   const poseRef = useFirestore().collection("poses").doc(poseID);
   const pose = useFirestoreDocData(poseRef);
 

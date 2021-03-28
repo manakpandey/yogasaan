@@ -1,0 +1,14 @@
+@import "../scss/fonts";
+
+.home {
+  .card_container {
+    width: 100%;
+    overflow: auto;
+  }
+  .home_heading {
+    font-family: $rubik;
+    font-weight: 300;
+    font-size: 24px;
+    margin: 12px;
+  }
+}
